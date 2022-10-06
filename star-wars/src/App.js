@@ -1,22 +1,18 @@
 
 import './styles/App.css';
-import Header from "./components/header";
-import Navbar from './components/navbar';
-import Footer from './components/Footer';
-import Characters from './components/characters';
-import Planets from './components/planets';
-import Vehicles from './components/vehicles';
+import {BrowserRouter, Routes, Route} from "react-router-dom";
+import injectContext from "./store/context";
+import Home from './views/Home';
+import Selection from './views/Selection';
 
 function App() {
   return (
-    <div className="App">
-      <Header />
-      <Navbar />
-      <Characters />
-      <Planets />
-      <Vehicles />
-      <Footer />
-    </div>
+    <BrowserRouter>
+    <Routes>
+      <Route path='/' element={<Home />}/>
+      <Route path='/selection' element={<Selection />}/>
+    </Routes>
+    </BrowserRouter>
   );
 }
 

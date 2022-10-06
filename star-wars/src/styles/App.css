@@ -1,9 +1,13 @@
-.App {
+.Home {
   text-align: center;
   background-color: black;
   color: whitesmoke;
 }
-
+.selection {
+  text-align: center;
+  background-color: black;
+  color: whitesmoke;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
