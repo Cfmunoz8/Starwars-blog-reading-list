@@ -20,7 +20,7 @@ function Planets(props) {
           <ul className="list-group list-group-flush">
             <li className="list-group-item">
               {" "}
-              <div class="d-grid gap-2 d-md-block">
+              <div className="d-grid gap-2 d-md-block">
                 <Link
                   className="btn btn-outline-primary"
                   type="button"

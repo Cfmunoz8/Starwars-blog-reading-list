@@ -1,7 +1,12 @@
-import React from "react";
+import React, { useContext, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { Context } from "../store/context";
 
 function Characters(props) {
+  const state = useContext(Context);
+  useEffect(() => {
+    state.actions.getCharacter();
+  }, []);
   return (
     <div className="pt-5" id="scrollspyCharacters">
       <h2>Personajes</h2>
@@ -14,7 +19,10 @@ function Characters(props) {
             style={{ height: "11rem" }}
           />
           <div className="card-body">
-            <h5 className="card-title"> Nombre: {props.characterName}</h5>
+            <h5 className="card-title">
+              {" "}
+              Nombre: {state.store.character.result?.properties.name}
+            </h5>
             <p className="card-text">Género:{props.characterText}</p>
             <p className="card-text">Color de cabello:{props.characterText}</p>
             <p className="card-text">Color de ojos: {props.characterText}</p>
@@ -23,7 +31,11 @@ function Characters(props) {
             <li className="list-group-item">
               {" "}
               <div class="d-grid gap-2 d-md-block">
-                <Link className="btn btn-outline-primary" type="button" to="/selection">
+                <Link
+                  className="btn btn-outline-primary"
+                  type="button"
+                  to="/selection"
+                >
                   ¡Conocer más!
                 </Link>
                 <button className="btn btn-outline-danger" type="button">
