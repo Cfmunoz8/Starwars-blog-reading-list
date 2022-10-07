@@ -1,4 +1,5 @@
-import React from "react";
+import React, {useContext} from "react";
+import { Context } from "../store/context";
 import Header from "/workspace/html-hello/star-wars/src/components/header";
 import Navbar from "/workspace/html-hello/star-wars/src/components/navbar";
 import Footer from "/workspace/html-hello/star-wars/src/components/Footer";

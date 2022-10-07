@@ -1,14 +1,15 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function Navbar() {
   return (
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#">
+    <nav className="navbar navbar-expand-lg sticky-top navbar-dark bg-dark">
+      <div className="container-fluid">
+        <Link className="navbar-brand" to="/">
           ¿Qué te interesa ver?
-        </a>
+        </Link>
         <button
-          class="navbar-toggler"
+          className="navbar-toggler"
           type="button"
           data-bs-toggle="collapse"
           data-bs-target="#navbarNavAltMarkup"
@@ -16,20 +17,51 @@ function Navbar() {
           aria-expanded="false"
           aria-label="Toggle navigation"
         >
-          <span class="navbar-toggler-icon"></span>
+          <span className="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-          <div class="navbar-nav">
-            <a class="nav-link" aria-current="page" href="#">
+        <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div className="navbar-nav">
+            <a
+              className="nav-link"
+              aria-current="page"
+              href="#scrollspyCharacters"
+            >
               Personajes
             </a>
-            <a class="nav-link" href="#">
-              Vehículos
-            </a>
-            <a class="nav-link" href="#">
+            <a className="nav-link" href="#scrollspyPlanets">
               Planetas
             </a>
+            <a className="nav-link" href="#scrollspyVehicles">
+              Vehículos
+            </a>
           </div>
+        </div>
+        <div className="dropdown">
+          <button
+            type="button"
+            className="btn btn-danger dropdown-toggle"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            Favoritos
+          </button>
+          <ul className="dropdown-menu dropdown-menu-end">
+            <li>
+              <a className="dropdown-item" href="/">
+                Action
+              </a>
+            </li>
+            <li>
+              <a className="dropdown-item" href="/">
+                Another action
+              </a>
+            </li>
+            <li>
+              <a className="dropdown-item" href="/">
+                Something else here
+              </a>
+            </li>
+          </ul>
         </div>
       </div>
     </nav>
