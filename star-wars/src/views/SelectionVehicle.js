@@ -1,19 +1,18 @@
-import React, {useContext} from "react";
-import { Context } from "../store/context";
+import React from "react";
 import Header from "/workspace/html-hello/star-wars/src/components/header";
 import Navbar from "/workspace/html-hello/star-wars/src/components/navbar";
 import Footer from "/workspace/html-hello/star-wars/src/components/Footer";
-import Learn from "../components/learnmore";
+import LearnMoreVehicle from "../components/LearnMoreVehicle";
 
-function Selection() {
-    return (
-      <div className="selection">
+function SelectionVehicle() {
+  return (
+    <div className="selection">
       <Header />
       <Navbar />
-      <Learn />
+      <LearnMoreVehicle />
       <Footer />
-      </div>
-    );
-  }
-  
-  export default Selection;
+    </div>
+  );
+}
+
+export default SelectionVehicle;

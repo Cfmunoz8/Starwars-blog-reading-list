@@ -1,11 +1,9 @@
-import React from "react";
+import React, { useContext, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { Context } from "../store/context";
 
-function Planets(props) {
+function Card(props) {
   return (
-    <div className="pt-5" id="scrollspyPlanets">
-      <h2>Planetas</h2>
-      <div className="col-12 col-md-6 col-xl-3 d-flex justify-content-evenly">
         <div className="card text-center text-bg-secondary m-3 ">
           <img
             src="http://fakeimg.pl/400x200"
@@ -14,8 +12,10 @@ function Planets(props) {
             style={{ height: "11rem" }}
           />
           <div className="card-body">
-            <h5 className="card-title">Nombre: {props.planetName}</h5>
-            <p className="card-text"> Población: {props.planetText}</p>
+            <h4 className="card-title">
+              {" "}
+              Nombre: {props.cardName}
+            </h4>
           </div>
           <ul className="list-group list-group-flush">
             <li className="list-group-item">
@@ -24,7 +24,7 @@ function Planets(props) {
                 <Link
                   className="btn btn-outline-primary"
                   type="button"
-                  to="/selection"
+                  to= {props.cardLink}
                 >
                   ¡Conocer más!
                 </Link>
@@ -35,9 +35,7 @@ function Planets(props) {
             </li>
           </ul>
         </div>
-      </div>
-    </div>
   );
 }
 
-export default Planets;
+export default Card;

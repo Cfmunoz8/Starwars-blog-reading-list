@@ -10,7 +10,7 @@ function Header() {
           alt="Logo"
           width=""
           height="200px"
-          class="d-inline-block align-text-top"
+          className="d-inline-block align-text-top"
         />
       </Link>
     </div>

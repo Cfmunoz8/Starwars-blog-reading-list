@@ -3,9 +3,7 @@ import { Context } from "../store/context";
 import Header from "../components/header";
 import Navbar from "../components/navbar";
 import Footer from "../components/Footer";
-import Characters from "../components/characters";
-import Planets from "../components/planets";
-import Vehicles from "../components/vehicles";
+import Info from "../components/info";
 
 function Home() {
   
@@ -13,9 +11,7 @@ function Home() {
     <div className="Home">
       <Header />
       <Navbar />
-      <Characters />
-      <Planets />
-      <Vehicles />
+      <Info />
       <Footer />
     </div>
   );

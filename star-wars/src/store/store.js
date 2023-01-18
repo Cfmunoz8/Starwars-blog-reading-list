@@ -1,29 +1,66 @@
 export const getState = ({ getActions, getStore, setStore }) => {
   return {
     store: {
-      personaje: "Luke",
-      character: {},
+      people: [],
+      planets: [],
+      vehicles: [],
+      character: [],
+      planet: [],
+      vehicle: [],
     },
     actions: {
-      getCharacter: () => {
-        fetch("https://www.swapi.tech/api/people/1/")
+      getPeople: () => {
+        fetch("https://www.swapi.tech/api/people/")
           .then((res) => res.json())
           .then((data) => {
-            setStore({ character: data });
+            setStore({ people: data.results });
+            console.log(data.results, "people");
+          })
+          .catch((err) => console.error(err));
+      },
+      getPlanets: () => {
+        fetch("https://www.swapi.tech/api/planets/")
+          .then((res) => res.json())
+          .then((data) => {
+            setStore({ planets: data.results });
+            console.log(data.results, "planets");
+          })
+          .catch((err) => console.error(err));
+      },
+      getVehicles: () => {
+        fetch("https://www.swapi.tech/api/vehicles/")
+          .then((res) => res.json())
+          .then((data) => {
+            setStore({ vehicles: data.results });
             console.log(data);
           })
           .catch((err) => console.error(err));
       },
-      getPlanet: () => {
-        fetch("https://www.swapi.tech/api/planets/1/")
+      getCharacter: (uid) => {
+        fetch("https://www.swapi.tech/api/people/" + uid)
           .then((res) => res.json())
-          .then((data) => console.log(data))
+          .then((data) => {
+            setStore({ character: data.result });
+            console.log(data.result, "character");
+          })
           .catch((err) => console.error(err));
       },
-      getVehicle: () => {
-        fetch("https://www.swapi.tech/api/vehicles/1/")
+      getPlanet: (uid) => {
+        fetch("https://www.swapi.tech/api/planets/" + uid)
           .then((res) => res.json())
-          .then((data) => console.log(data))
+          .then((data) => {
+            setStore({ planet: data.result });
+            console.log(data.result, "planet");
+          })
+          .catch((err) => console.error(err));
+      },
+      getVehicle: (uid) => {
+        fetch("https://www.swapi.tech/api/vehicles/" + uid)
+          .then((res) => res.json())
+          .then((data) => {
+            setStore({ vehicle: data.result });
+            console.log(data.result, "vehicle");
+          })
           .catch((err) => console.error(err));
       },
     },
