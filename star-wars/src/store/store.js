@@ -7,6 +7,7 @@ export const getState = ({ getActions, getStore, setStore }) => {
       character: [],
       planet: [],
       vehicle: [],
+      favorites: [],
     },
     actions: {
       getPeople: () => {
@@ -62,6 +63,21 @@ export const getState = ({ getActions, getStore, setStore }) => {
             console.log(data.result, "vehicle");
           })
           .catch((err) => console.error(err));
+      },
+      addFavorite: (favorite) => {
+        const store = getStore();
+        console.log(favorite);
+        const one = store.favorites.some((item) => item === favorite);
+        if (one === true) {
+          return;
+        } else {
+          setStore(store.favorites.push(favorite));
+        }
+      },
+      deleteFavorite: (index) => {
+        const { favorites } = getStore();
+        favorites.splice(index, 1);
+        setStore(...favorites);
       },
     },
   };

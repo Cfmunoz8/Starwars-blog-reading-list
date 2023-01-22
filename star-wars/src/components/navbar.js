@@ -1,8 +1,10 @@
-import React from "react";
-import { Link } from "react-router-dom";
-
+import React, { useContext, useEffect } from "react";
+import { Context } from "../store/context";
+import { useParams, Link } from "react-router-dom";
+import { AiOutlineCloseSquare } from "react-icons/ai";
 
 function Navbar() {
+  const { store, actions } = useContext(Context);
   return (
     <nav className="navbar navbar-expand-lg sticky-top navbar-dark bg-dark">
       <div className="container-fluid">
@@ -47,21 +49,17 @@ function Navbar() {
             Favoritos
           </button>
           <ul className="dropdown-menu dropdown-menu-end">
-            <li>
-              <a className="dropdown-item" href="">
-                Action
-              </a>
-            </li>
-            <li>
-              <a className="dropdown-item" href="">
-                Another action
-              </a>
-            </li>
-            <li>
-              <a className="dropdown-item" href="">
-                Something else here
-              </a>
-            </li>
+            {store.favorites.map((item, index) => {
+              return (
+                <li className="dropdown-item" key={index}>
+                  <Link to={"/character/" + item.uid}>{item} </Link>{" "}
+                  <AiOutlineCloseSquare
+                    className="ml-2 h5"
+                    onClick={() => actions.removeFavorite(index)}
+                  />
+                </li>
+              );
+            })}
           </ul>
         </div>
       </div>

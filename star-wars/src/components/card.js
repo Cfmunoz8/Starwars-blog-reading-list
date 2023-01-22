@@ -1,6 +1,8 @@
 import React, { useContext, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Context } from "../store/context";
+import { AiFillHeart } from 'react-icons/ai';
+
 
 function Card(props) {
   return (
@@ -28,8 +30,8 @@ function Card(props) {
                 >
                   ¡Conocer más!
                 </Link>
-                <button className="btn btn-outline-danger" type="button">
-                  Fav
+                <button className="btn btn-outline-danger" type="button"  onClick={props.buttonClick}>
+                <AiFillHeart/>
                 </button>
               </div>
             </li>
