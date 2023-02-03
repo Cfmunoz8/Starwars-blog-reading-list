@@ -22,7 +22,7 @@ function Info() {
                   className="col"
                   cardName={item.name}
                   cardLink= {"/character/"+ item.uid}
-                  buttonClick= {() => { actions.addFavorite(item.name) }}
+                  buttonClick= {() => { actions.addFavorite(item.name, item.uid) }}
                 />
               );
             })}
@@ -38,7 +38,7 @@ function Info() {
                   className="col"
                   cardName={item.name}
                   cardLink= {"/planet/"+ item.uid}
-                  buttonClick= {() => { actions.addFavorite(item.name) }}
+                  buttonClick= {() => { actions.addFavorite(item.name, item.uid) }}
 
                 />
               );
@@ -48,14 +48,14 @@ function Info() {
       <div className="pt-5" id="scrollspyVehicles">
         <h2>Vehículos</h2>
         <div className="d-flex justify-content-evenly row row-cols-auto">
-            {store.vehicles?.map((item) => {
+            {store.vehicles?.map((item, uid) => {
               return (
                 <Card
                   key={item.uid}
                   className="col"
                   cardName={item.name}
                   cardLink= {"/vehicle/"+ item.uid}
-                  buttonClick= {() => { actions.addFavorite(item.name) }}
+                  buttonClick= {() => { actions.addFavorite(item.name, item.uid) }}
 
                 />
               );
