@@ -64,10 +64,9 @@ export const getState = ({ getActions, getStore, setStore }) => {
           })
           .catch((err) => console.error(err));
       },
-      addFavorite: (favorite, uid) => {
+      addFavorite: (favorite) => {
         const store = getStore();
-        console.log(favorite);
-        const one = store.favorites.some((item) => item === favorite);
+        const one = store.favorites.some((item) => item.uid === favorite.uid);
         if (one === true) {
           return;
         } else {

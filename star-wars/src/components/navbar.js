@@ -52,7 +52,7 @@ function Navbar() {
             {store.favorites.map((item, index) => {
               return (
                 <li className="dropdown-item" key={index}>
-                  <Link to={"/character/" + item.uid}>{item} </Link>{" "}
+                  <Link to={"/character/" + item.uid}>{item.name} </Link>{" "}
                   <AiOutlineCloseSquare
                     className="ml-2 h5"
                     onClick={() => actions.removeFavorite(index)}

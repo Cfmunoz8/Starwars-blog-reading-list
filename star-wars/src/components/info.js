@@ -22,7 +22,7 @@ function Info() {
                   className="col"
                   cardName={item.name}
                   cardLink= {"/character/"+ item.uid}
-                  buttonClick= {() => { actions.addFavorite(item.name, item.uid) }}
+                  buttonClick= {() => { actions.addFavorite(item) }}
                 />
               );
             })}
@@ -38,7 +38,7 @@ function Info() {
                   className="col"
                   cardName={item.name}
                   cardLink= {"/planet/"+ item.uid}
-                  buttonClick= {() => { actions.addFavorite(item.name, item.uid) }}
+                  buttonClick= {() => { actions.addFavorite(item) }}
 
                 />
               );
@@ -55,7 +55,7 @@ function Info() {
                   className="col"
                   cardName={item.name}
                   cardLink= {"/vehicle/"+ item.uid}
-                  buttonClick= {() => { actions.addFavorite(item.name, item.uid) }}
+                  buttonClick= {() => { actions.addFavorite(item) }}
 
                 />
               );
