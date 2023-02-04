@@ -8,6 +8,8 @@ export const getState = ({ getActions, getStore, setStore }) => {
       planet: [],
       vehicle: [],
       favorites: [],
+      favoritesPlanet: [],
+      favoritesVehicle: [],
     },
     actions: {
       getPeople: () => {
@@ -72,13 +74,39 @@ export const getState = ({ getActions, getStore, setStore }) => {
         } else {
           setStore(store.favorites.push(favorite));
         }
-
-
       },
       deleteFavorite: (index) => {
         const { favorites } = getStore();
-        favorites.splice(index);
+        favorites.splice(index, 1);
         setStore(...favorites);
+      },
+      addFavoritePlanet: (favorite) => {
+        const store = getStore();
+        const one = store.favoritesPlanet.some((item) => item.uid === favorite.uid);
+        if (one === true) {
+          return;
+        } else {
+          setStore(store.favoritesPlanet.push(favorite));
+        }
+      },
+      deleteFavoritePlanet: (index) => {
+        const { favoritesPlanet } = getStore();
+        favoritesPlanet.splice(index, 1);
+        setStore(...favoritesPlanet);
+      },
+      addFavoriteVehicle: (favorite) => {
+        const store = getStore();
+        const one = store.favoritesVehicle.some((item) => item.uid === favorite.uid);
+        if (one === true) {
+          return;
+        } else {
+          setStore(store.favoritesVehicle.push(favorite));
+        }
+      },
+      deleteFavoriteVehicle: (index) => {
+        const { favoritesVehicle } = getStore();
+        favoritesVehicle.splice(index, 1);
+        setStore(...favoritesVehicle);
       },
     },
   };

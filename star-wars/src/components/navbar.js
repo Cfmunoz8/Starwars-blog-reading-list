@@ -55,7 +55,29 @@ function Navbar() {
                   <Link to={"/character/" + item.uid}>{item.name} </Link>{" "}
                   <AiOutlineCloseSquare
                     className="ml-2 h5"
-                    onClick={() => actions.removeFavorite(index)}
+                    onClick={() => actions.deleteFavorite(index)}
+                  />
+                </li>
+              );
+            })}
+            {store.favoritesPlanet.map((item, index) => {
+              return (
+                <li className="dropdown-item" key={index}>
+                  <Link to={"/planet/" + item.uid}>{item.name} </Link>{" "}
+                  <AiOutlineCloseSquare
+                    className="ml-2 h5"
+                    onClick={() => actions.deleteFavoritePlanet(index)}
+                  />
+                </li>
+              );
+            })}
+            {store.favoritesVehicle.map((item, index) => {
+              return (
+                <li className="dropdown-item" key={index}>
+                  <Link to={"/vehicle/" + item.uid}>{item.name} </Link>{" "}
+                  <AiOutlineCloseSquare
+                    className="ml-2 h5"
+                    onClick={() => actions.deleteFavoriteVehicle(index)}
                   />
                 </li>
               );

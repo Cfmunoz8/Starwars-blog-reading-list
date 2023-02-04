@@ -38,7 +38,7 @@ function Info() {
                   className="col"
                   cardName={item.name}
                   cardLink= {"/planet/"+ item.uid}
-                  buttonClick= {() => { actions.addFavorite(item) }}
+                  buttonClick= {() => { actions.addFavoritePlanet(item) }}
 
                 />
               );
@@ -55,7 +55,7 @@ function Info() {
                   className="col"
                   cardName={item.name}
                   cardLink= {"/vehicle/"+ item.uid}
-                  buttonClick= {() => { actions.addFavorite(item) }}
+                  buttonClick= {() => { actions.addFavoriteVehicle(item) }}
 
                 />
               );
