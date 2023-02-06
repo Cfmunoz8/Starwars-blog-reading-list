@@ -1,7 +1,7 @@
 import React from "react";
-import Header from "/workspace/html-hello/star-wars/src/components/header";
-import Navbar from "/workspace/html-hello/star-wars/src/components/navbar";
-import Footer from "/workspace/html-hello/star-wars/src/components/Footer";
+import Header from "../components/header";
+import Navbar from "../components/navbar";
+import Footer from "../components/Footer";
 import LearnMoreVehicle from "../components/LearnMoreVehicle";
 
 function SelectionVehicle() {
